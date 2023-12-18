@@ -1,0 +1,45 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<a href="{% url "index" %}">Go back to the library</a>
+
+<a href="{% url "list-create" username=user.username %}">Create list</a>
+<h2>{{ user.username }}'s lists</h2>
+{% for list in lists %}
+<a href="{% url "list-detail" username=user.username slug=list.slug %}">
+    <div class="list">
+        {{ list.name }}
+        {{ list.description }}
+        {{ list.created }}
+        {{ list.modified }}
+    </div>
+</a>
+<a href="{% url "list-update" username=user.username slug=list.slug %}"><i class="bi bi-pencil-fill"></i></a>
+<a href="{% url "list-delete" username=user.username slug=list.slug %}"><i class="bi bi-x-circle"></i></a>
+<button><i class="bi bi-box-arrow-up-right"></i></button></a>
+<form action="{% url "list-share" username=user.username slug=list.slug %}" method="POST">{% csrf_token %}
+    <select name="users" id="users" multiple>
+            {% for l_user in users %}
+                <option value="{{ l_user.username }}">{{ l_user.username }}</option>
+            {% endfor %}
+    </select>
+    <button type="submit">Share</button>
+</form>
+{% endfor %}
+
+
+<h2>Shared lists</h2>
+
+{% for shared_list in shared_lists %}
+<a href="{% url "list-detail" username=user.username slug=shared_list.slug %}">
+    <div class="list">
+        {{ shared_list.name }}
+        {{ shared_list.description }}
+        {{ shared_list.created }}
+        {{ shared_list.modified }}
+    </div>
+</a>
+{% endfor %}
+
+{% endblock %}

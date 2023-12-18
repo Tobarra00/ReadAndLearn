@@ -1,0 +1,11 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<a href="{% url "lists" username=user.username %}">My Lists</a>
+<form method='POST'>{% csrf_token %}
+    <p>Edit {{ object }} info:</p>
+    {{form.as_p}}
+    <button type="submit">Save</button>
+</form>
+
+{% endblock %}

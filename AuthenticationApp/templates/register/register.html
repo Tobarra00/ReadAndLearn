@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+<title>Register</title>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="log-reg-form">
+    <div class="title-container text-success">
+        <h3>User registration</h3>
+    </div>
+    <div class='row'>
+        <p>Complete the following form:</p>
+    </div>
+    <div class='row'>
+        <form method="post" class='form'>{% csrf_token %}
+            <table>
+                <tr>
+                    <td class='row-label'>{{form.username.label_tag}}</td>
+                    <td>{{form.username}}</td>              
+                </tr>
+                <tr>
+                    <td class='row-label'>{{form.password1.label_tag}}</td>
+                    <td>{{form.password1}}</td>
+                </tr>
+                <tr>
+                    <td class='row-label'>{{form.password2.label_tag}}</td>
+                    <td>{{form.password2}}</td>
+                </tr>
+            </table>
+            {% if form.username.errors %}
+                <ul class="errorlist">
+                    {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if form.password1.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password1.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if form.password2.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password2.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <div class="submit">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>   
+        </form>
+    </div>
+    <div class="row">
+        <p>Already have an account? <a href="{% url "login" %}">Log in</a></p>
+    </div>
+</div>
+
+{% endblock %}

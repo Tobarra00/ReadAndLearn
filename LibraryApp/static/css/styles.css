@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #040D12;
+    color: white;
+}
+
+header {
+    background-color: rgba(24, 61, 61, 0.34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 0;
+    font-size: 1.6rem;
+    height: 9vh;
+}
+
+main {
+    width: 100%;
+    height: 81vh;
+}
+
+footer { 
+    background-color: #183D3D;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+.filter-options-text {
+    font-size: large;
+    padding: 5px 25px;
+}
+
+.filter-form {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.filter-option {
+    width: 27%;
+    padding: 3px 0;
+    border-radius: 10px;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 20px;
+    padding: 5px;
+}
+
+.user-info {
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+    margin-right: 60px;
+}
+
+.book-cover {
+    width: 150px;
+    height: 250px;
+}
+
+.main-container {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 15%;
+}
+
+
+.element {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    margin: 10px 80px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.log-reg-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10%;
+    padding-top: 200px;
+}
+
+.log-reg-form > .row tr {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.row-label {
+    padding-right: 10px;
+}
