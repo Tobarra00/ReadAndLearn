@@ -1,11 +1,36 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-<a href="{% url "lists" username=user.username %}">My Lists</a>
-<form method='POST'>{% csrf_token %}
-    <p>Edit {{ object }} info:</p>
-    {{form.as_p}}
-    <button type="submit">Save</button>
-</form>
+
+<div class="container d-flex flex-column align-items-center">
+
+    <div class="log-reg-form mt-5">
+        <div class="title-container text-success">
+            <h3>Edit {{ object }} info:</h3>
+        </div>
+        <div class="row">
+            <form method="post" class='form'>{% csrf_token %}
+                <table>
+                    <tr>
+                        <td class='row-label text-center'>{{form.name.label_tag}}</td>
+                        <td>{{form.name}}</td>
+                    </tr>
+                    <tr>
+                        <td class='row-label'>{{form.description.label_tag}}</td>
+                        <td>{{form.description}}</td>
+                    </tr>
+                    <tr>
+                        <td class='row-label ms-4'>{{form.book.label_tag}}</td>
+                        <td>{{form.book}}</td>
+                    </tr>
+                </table>
+                <div class="d-flex justify-content-around ms-5">
+                    <a href="{% url "lists" username=user.username %}" class="btn btn-outline-secondary">My Lists</a>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

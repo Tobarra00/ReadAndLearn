@@ -2,27 +2,49 @@
 
 {% block content %}
 
-<a href="{% url "lists" username=user.username %}">My Lists</a>
+<div class="container d-flex flex-column align-items-start">
+    <a href="{% url "lists" username=user.username %}" class="btn btn-outline-secondary my-3">My Lists</a>
+    <p class="w-100 text-center fs-2 fw-bold">{{ list_details.name }}</p>
 
-{{ list_details.name }}
-{{ list_details.description }}
-{% if list_details.user.first != request.user %}
-    <p>List shared by {{ list_details.user.first }}</p>
-{% endif %}
+    {% if list_details.book.all %}
+        {% for book in list_details.book.all %}
+        <div class="card border-light bg-transparent mb-4 w-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ book.cover }}" class="img-fluid rounded-start" alt="{{ book.title }}" style="height: 450px; width: 300px;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body text-white h-100 d-flex flex-column text-start justify-content-around">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <p class="card-text">{{ book.synopsis }}</p>
+                        <p class="card-text">Additional information:</p>
+                        <p class="card-text"><small>Writen by: {{ book.genre }}</small></p>
+                        <p class="card-text"><small>This book was writen in: {{ book.year }}</small></p>
+                        <p class="card-text"><small>By: {{ book.author.name }}</small></p>
+                        <p class="card-text"><small>Nº of pages: {{ book.pages }}</small></p>
 
-{% for book in list_details.book.all %}
-<div>
-    {{ book.title }}
-    {{ book.synopsis }}
-    {{ book.genre }}
-    {{ book.year }}
-    {{ book.author.name }}
-    {{ book.pages }}
+                        {% if list_details.user.first != request.user %}
+                            <p class="card-text text-end"><small>List shared by {{ list_details.user.first }}</small></p>
+                        {% endif %}
 
-    {% if list_details.user.first == request.user %}
-        <a href="{% url "delete-book" username=user.username slug=list_details.slug book_pk=book.pk %}"><i class="bi bi-x-circle"></i></a>
+                        {% if list_details.user.first == request.user %}
+                            <a href="{% url "delete-book" username=user.username slug=list_details.slug book_pk=book.pk %}" class="text-end"><span style="color: red"><i class="bi bi-x-circle"></i></span></a>
+                        {% endif %} 
+                    </div>  
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+    <div class="container text-center mt-5">
+        <p>This list is empty <i class="bi bi-emoji-frown"></i></p>
+        {% if list_details.user.first == request.user %}
+        <p>Go add some books!</p>
+        <a href="{% url "index" %}" class="btn btn-outline-success my-3">Library</a>
+        {% else %}
+        <p>Wait until {{ list_details.user.first }} adds more books.</p>
+        {% endif %}
+    </div>    
     {% endif %}    
 </div>
-{% endfor %}
-
 {% endblock %}

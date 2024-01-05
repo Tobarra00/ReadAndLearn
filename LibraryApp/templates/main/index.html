@@ -1,12 +1,13 @@
 {% extends "main/base.html" %}
 
 {% block content %}
+
 <div class="filter-options-text">Filter options:</div>
 <div class="top-container">
     <form method="GET" class="filter-form">{% csrf_token %}
         <input type="text" name="title" class="filter-option" id="title" placeholder='Title...'>
         <select name="genre" class="filter-option" id="genre">
-            <option disabled selected value> -- select an option -- </option>
+            <option disabled selected value class="text-center"> -- select a genre -- </option>
             {% for genre in genres %}
             <option value="{{ genre }}">{{ genre }}</option>
             {% endfor %}
@@ -33,16 +34,22 @@
 </div>
 
     <div class='main-container'>
-        {% for book in books %}
-        <div class='element'>
-            <a href="{% url "book-detail" slug=book.slug %}"><img src="{{book.cover}}" alt="{{book.title}} cover" class='book-cover'></a>
+        {% if books %}
+            {% for book in books %}
+            <div class='element'>
+                <a href="{% url "book-detail" slug=book.slug %}"><img src="{{book.cover}}" alt="{{book.title}} cover" class='book-cover'></a>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="container text-center mt-5">
+            <p>No results were found.</p>
         </div>
-        {% endfor %}
+        {% endif %}
     </div>
     
 
     <!--Django paginator-->
-    <div class="pagination">
+    <div class="pagination mb-4">
         <span class="step-links">
             {% if page_obj.has_previous %}
                 <a href="?page=1{% if request.GET.title %}&title={{ request.GET.title }}{% endif %}{% if request.GET.genre %}&genre={{ request.GET.genre }}{% endif %}{% if request.GET.pages %}&pages={{ request.GET.pages }}{% endif %}">&laquo; First</a>

@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <h1><a href="{% url "index" %}">Read&Learn</a></h1>
+        <h1><a href="{% url "index" %}"  class="fw-bold">Read&Learn</a></h1>
     </header>
     <main>
         {% block content %}
@@ -23,8 +23,8 @@
         <div>
             <h3>By Pedro Tobarra Leal</h3>
         </div>
-        <div class="contact">
-            <a href="mailto:pedro.tobarra.leal@gmail.com" class='btn btn-contact'>Contact me</a>
+        <div class="container w-25 m-0 d-flex justify-content-around align-items-center">
+            <a href="mailto:pedro.tobarra.leal@gmail.com" class='text-light'>Contact me</a>
             <a href="https://github.com/Tobarra00" target="blank"><img src="{% static 'images/github-mark-white.png' %}" alt="github link" width='32' height='32'></a>
             <a href="https://linkedin.com/in/pedro-tobarra-leal" target="blank"><img src="{% static 'images/linkedin.png' %}" alt="linkedin link"></a>
         </div>

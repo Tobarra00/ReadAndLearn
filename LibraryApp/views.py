@@ -10,8 +10,6 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from . import models, mixins
 
-# Create your views here.
-
 class Library(ListView):
     model = models.Book
     template_name = "main/index.html"
@@ -172,7 +170,8 @@ def share_list(request, username, slug):
     if share_to_user:
         list_to_share = models.List.objects.get(slug=slug)
         for user in share_to_user:
-            list_to_share.shared_to.append(user)
-            list_to_share.save()
+            if user not in list_to_share.shared_to:
+                list_to_share.shared_to.append(user)
+                list_to_share.save()
     
     return redirect('lists', username=username)   

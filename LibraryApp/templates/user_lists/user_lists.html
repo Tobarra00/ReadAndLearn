@@ -1,45 +1,108 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-
-<a href="{% url "index" %}">Go back to the library</a>
-
-<a href="{% url "list-create" username=user.username %}">Create list</a>
-<h2>{{ user.username }}'s lists</h2>
-{% for list in lists %}
-<a href="{% url "list-detail" username=user.username slug=list.slug %}">
-    <div class="list">
-        {{ list.name }}
-        {{ list.description }}
-        {{ list.created }}
-        {{ list.modified }}
+<div class="container d-flex flex-column align-items-start">
+    <div class="container my-3">
+        <a href="{% url "index" %}" class="btn btn-outline-secondary me-3">Go back to the library</a>
+        <a href="{% url "list-create" username=user.username %}" class="btn btn-outline-success">Create list</a>
     </div>
-</a>
-<a href="{% url "list-update" username=user.username slug=list.slug %}"><i class="bi bi-pencil-fill"></i></a>
-<a href="{% url "list-delete" username=user.username slug=list.slug %}"><i class="bi bi-x-circle"></i></a>
-<button><i class="bi bi-box-arrow-up-right"></i></button></a>
-<form action="{% url "list-share" username=user.username slug=list.slug %}" method="POST">{% csrf_token %}
-    <select name="users" id="users" multiple>
-            {% for l_user in users %}
-                <option value="{{ l_user.username }}">{{ l_user.username }}</option>
+    <h2 class="ms-2">{{ user.username }}'s lists</h2>
+
+    {% if lists %}
+        <div class="container-sm">
+            {% for list in lists %}
+
+            {% if forloop.first or forloop.counter0|divisibleby:4 %}
+                <div class="row my-5" style="min-height: 250px;">
+            {% endif %}
+            <div class="col-md-3">
+                <div class="card mb-3 h-100" style="background: rgb(4,0,71); background: radial-gradient(circle, rgba(4,0,71,1) 0%, rgba(12,0,154,1) 71%, rgba(0,30,138,1) 100%);">
+                    <div class="card-body">
+                        <a href="{% url "list-detail" username=user.username slug=list.slug %}">
+                            <p class="fw-bold text-light fs-5">{{ list.name }}</p>
+                            <hr>
+                            <p class="text-light">{{ list.description }}</p>
+                            <hr>
+                            <p class="text-light"><small>Created on: {{ list.created }}</small></p>
+                            <p class="text-light"><small>Last modified: {{ list.modified }}</small></p>
+                        </a>
+                    </div>
+                    <div class="card-footer" style="background-color: #4338C2">
+                        <a href="{% url "list-update" username=user.username slug=list.slug %}" class="btn btn-info"><i class="bi bi-pencil-fill"></i></a>
+                        <a href="{% url "list-delete" username=user.username slug=list.slug %}" class="btn btn-danger"><i class="bi bi-x-circle"></i></a>
+                        <!-- Button trigger modal -->
+                        <ul class="list-group list-group-flush" style="display:inline-block">
+                            <li class="list-group-item bg-transparent">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-{{list.slug}}">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </button>
+                            </li>
+                        </ul>
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal-{{list.slug}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5 text-dark" id="ModalLabel">Share {{list.name}} with:</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{% url "list-share" username=user.username slug=list.slug %}" method="POST" class="text-center">{% csrf_token %}
+                                            <select name="users" id="users" multiple style="width: 250px">
+                                                {% for l_user in users %}
+                                                    <option value="{{ l_user.username }}">{{ l_user.username }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <button type="submit">Share</button>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.last or forloop.counter|divisibleby:4 %}
+                </div>
+            {% endif %}
             {% endfor %}
-    </select>
-    <button type="submit">Share</button>
-</form>
-{% endfor %}
+        </div>
+    {% else %}
+            <p class="ms-2">You don't have lists, create one! <a href="{% url "list-create" username=user.username %}" class="btn btn-outline-success">Create list</a></p>    
+    {% endif %}
 
+    <h2 class="ms-2">Shared lists</h2>
+    {% if shared_lists %}
+    <div class="container-sm">
+        {% for shared_list in shared_lists %}
 
-<h2>Shared lists</h2>
-
-{% for shared_list in shared_lists %}
-<a href="{% url "list-detail" username=user.username slug=shared_list.slug %}">
-    <div class="list">
-        {{ shared_list.name }}
-        {{ shared_list.description }}
-        {{ shared_list.created }}
-        {{ shared_list.modified }}
-    </div>
-</a>
-{% endfor %}
-
+        {% if forloop.first or forloop.counter0|divisibleby:4 %}
+            <div class="row my-5" style="min-height: 250px;">
+        {% endif %}
+        <div class="col-md-3">
+            <a href="{% url "list-detail" username=user.username slug=shared_list.slug %}">
+                <div class="card mb-3 h-100" style="background: rgb(1,14,2); background: radial-gradient(circle, rgba(1,14,2,1) 0%, rgba(5,32,3,1) 81%, rgba(5,27,5,1) 100%);">
+                    <div class="card-body">
+                        <p class="fw-bold text-light fs-5">{{ shared_list.name }}</p>
+                        <hr style="color: blue">
+                        <p class="text-light">{{ shared_list.description }}</p>
+                        <hr style="color: blue">
+                        <p class="text-light"><small>Created on: {{ shared_list.created }}</small></p>
+                        <p class="text-light"><small>Last modified: {{ shared_list.modified }}</small></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% if forloop.last or forloop.counter|divisibleby:4 %}
+            </div>
+        {% endif %}
+        {% endfor %}
+        </div>
+    {% else %}
+        <p class="ms-2">You have no shared lists.</p>    
+    {% endif %}
+</div>
 {% endblock %}
