@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'ReadAndLearn.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Read&Learn',
+        'NAME': '',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',

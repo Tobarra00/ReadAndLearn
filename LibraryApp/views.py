@@ -58,7 +58,8 @@ class BookDetail(DetailView):
         # Displays all lists of the current user
         if self.request.user.is_authenticated:
             user_lists = models.List.objects.filter(user__pk=self.request.user.pk)
-            lists_with_book = models.List.objects.filter(book=book)
+            shared_lists = models.List.objects.filter(shared_to__contains=[self.request.user.username])
+            lists_with_book = user_lists.filter(book__pk=book.pk) | shared_lists.filter(book__pk=book.pk)
             context['user_lists'] = user_lists
             context['lists_with_book'] = lists_with_book
           
