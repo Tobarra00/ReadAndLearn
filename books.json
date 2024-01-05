@@ -1,0 +1,284 @@
+[{
+        "book": {
+            "title": "The Lord of the rings",
+            "pages": 1200,
+            "genre": "Fantasy",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1566425108i/33.jpg",
+            "synopsis": "An epic adventure in a fantasy world called Middle Earth.",
+            "year": 1954,
+            "ISBN": "978-0618640157",
+            "author": {
+                "name": "J.R.R. Tolkien",
+                "otherBooks": [
+                    "The Hobbit",
+                    "The Silmarillion"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "Game of Thrones",
+            "pages": 694,
+            "genre": "Fantasy",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1273763400i/8189620.jpg",
+            "synopsis": "In a kingdom where the seasons last for years, an epic battle for the throne unfolds.",
+            "year": 1996,
+            "ISBN": "978-0553103540",
+            "author": {
+                "name": "George R. R. Martin",
+                "otherBooks": [
+                    "Clash of Kings",
+                    "Storm of Swords",
+                    "Feast for Crows"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "Harry Potter and the Philosopher's Stone",
+            "pages": 223,
+            "genre": "Fantasy",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1550337333i/15868.jpg",
+            "synopsis": "A boy discovers that he is a magician and begins an adventure at a magic school.",
+            "year": 1997,
+            "ISBN": "978-0747532699",
+            "author": {
+                "name": "J.K. Rowling",
+                "otherBooks": [
+                    "Harry Potter and the Chamber of Secrets",
+                    "Harry Potter and the Prisoner of Azkaban",
+                    "Harry Potter and the Goblet of Fire"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "1984",
+            "pages": 328,
+            "genre": "Science fiction",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg",
+            "synopsis": "A disturbing vision of a dystopian and totalitarian future.",
+            "year": 1949,
+            "ISBN": "978-0451524935",
+            "author": {
+                "name": "George Orwell",
+                "otherBooks": [
+                    "Rebelion on the farm"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "Zombie apocalypse",
+            "pages": 444,
+            "genre": "Zombies",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1422626176i/24762432.jpg",
+            "synopsis": "A Galician stays at home in the middle of the zombie apocalypse and ends up almost saving the world",
+            "year": 2001,
+            "ISBN": "978-4444532611",
+            "author": {
+                "name": "Manel Loreiro",
+                "otherBooks": []
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "Dune",
+            "pages": 412,
+            "genre": "Science fiction",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1555447414i/44767458.jpg",
+            "synopsis": "On the inhospitable desert planet of Arrakis, great political and family intrigue unfolds.",
+            "year": 1965,
+            "ISBN": "978-0441172719",
+            "author": {
+                "name": "Frank Herbert",
+                "otherBooks": [
+                    "The Messiah of Dune",
+                    "Children of Dune"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "The Hitchhiker's Guide to the Galaxy",
+            "pages": 216,
+            "genre": "Science fiction",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1653311117i/6691227.jpg",
+            "synopsis": "An absurd and comical journey through space, with towels.",
+            "year": 1979,
+            "ISBN": "978-0345391803",
+            "author": {
+                "name": "Douglas Adams",
+                "otherBooks": [
+                    "The restaurant at the end of the world",
+                    "Life, the universe and everything else"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "Neuromant",
+            "pages": 271,
+            "genre": "Science fiction",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554437249i/6088007.jpg",
+            "synopsis": "A prophetic vision of cyber-reality and artificial intelligence.",
+            "year": 1984,
+            "ISBN": "978-0441569595",
+            "author": {
+                "name": "William Gibson",
+                "otherBooks": [
+                    "Count Zero",
+                    "Mona Lisa Accelerated"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "Fahrenheit 451",
+            "pages": 249,
+            "genre": "Science fiction",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1383718290i/13079982.jpg",
+            "synopsis": "A future society where books are banned and 'firefighters' burn any book they find.",
+            "year": 1953,
+            "ISBN": "978-1451673319",
+            "author": {
+                "name": "Ray Bradbury",
+                "otherBooks": [
+                    "Martian Chronicles",
+                    "The Illustrated Man"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "The Shining",
+            "pages": 688,
+            "genre": "Horror",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1641398308i/60038757.jpg",
+            "synopsis": "A family moves to an isolated hotel for the winter where a sinister presence influences the father toward violence.",
+            "year": 1977,
+            "ISBN": "978-0307743657",
+            "author": {
+                "name": "Stephen King",
+                "otherBooks": [
+                    "Carrie",
+                    "It"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "Dracula",
+            "pages": 418,
+            "genre": "Horror",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387151694i/17245.jpg",
+            "synopsis": "The story of the infamous Count Dracula and his attempt to move from Transylvania to England.",
+            "year": 1897,
+            "ISBN": "978-0486411095",
+            "author": {
+                "name": "Bram Stoker",
+                "otherBooks": [
+                    "The jewel of the seven stars",
+                    "The White Worm's Burrow"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "Frankenstein",
+            "pages": 280,
+            "genre": "Horror",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1669159060i/63631742.jpg",
+            "synopsis": "An obsessed scientist creates a living creature from stolen body parts, with disastrous consequences.",
+            "year": 1818,
+            "ISBN": "978-0486282114",
+            "author": {
+                "name": "Mary Shelley",
+                "otherBooks": [
+                    "The last man",
+                    "Valperga"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "The Call of Cthulhu",
+            "pages": 43,
+            "genre": "Horror",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1485924654i/34094154.jpg",
+            "synopsis": "The story of an ancient monster that threatens to revive and dominate the world.",
+            "year": 1928,
+            "ISBN": "978-1542461690",
+            "author": {
+                "name": "H.P. Lovecraft",
+                "otherBooks": [
+                    "The Dunwich Horror",
+                    "In the mountains of madness"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "To Kill a Mockingbird",
+            "pages": 323,
+            "genre": "Novel",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553383690i/2657.jpg",
+            "synopsis": "A classic novel set in the American South during the 1930s, addressing issues of racial injustice and moral growth.",
+            "year": 1960,
+            "ISBN": "978-0061120084",
+            "author": {
+                "name": "Harper Lee",
+                "otherBooks": []
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "The Catcher in the Rye",
+            "pages": 224,
+            "genre": "Fiction",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1398034300i/5107.jpg",
+            "synopsis": "A classic novel that follows the experiences of a young man named Holden Caulfield as he navigates the challenges of adolescence in New York City.",
+            "year": 1951,
+            "ISBN": "978-0316769488",
+            "author": {
+                "name": "J.D. Salinger",
+                "otherBooks": [
+                    "Franny and Zooey",
+                    "Nine Stories"
+                ]
+            }
+        }
+    },
+    {
+        "book": {
+            "title": "The Great Gatsby",
+            "pages": 180,
+            "genre": "Fiction",
+            "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg",
+            "synopsis": "A novel that explores themes of wealth, decadence, and the American Dream during the Roaring Twenties.",
+            "year": 1925,
+            "ISBN": "978-0743273565",
+            "author": {
+                "name": "F. Scott Fitzgerald",
+                "otherBooks": [
+                    "Tender Is the Night",
+                    "This Side of Paradise"
+                ]
+            }
+        }
+    }
+]
