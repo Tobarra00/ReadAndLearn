@@ -39,11 +39,23 @@ https://github.com/Tobarra00/ReadAndLearn/assets/94169504/62729a8d-4462-4f9d-b78
 <br><br>
 <li>Create and Manage Lists: Users can create personalized lists to categorize and organize their favorite books. Each book can be added to these lists for easy reference.</li><br><br>
 
+
+https://github.com/Tobarra00/ReadAndLearn/assets/94169504/d9c59b4c-9e88-4ed6-820d-c393d15048cc
+
+
 <br><br>
 <li>Duplicate Check: When adding a book to a list, Read&Learn checks if the book is already present in any of the user's existing lists, preventing duplication.</li><br><br>
 
+
+https://github.com/Tobarra00/ReadAndLearn/assets/94169504/707291f3-fddf-41b8-908d-45715002ac7f
+
+
 <br><br>
 <li>Sharing Lists: Enhance the reading experience by sharing your personal lists with other users. It's a great way to discover new books and share your literary preferences.</li><br><br>
+
+
+https://github.com/Tobarra00/ReadAndLearn/assets/94169504/e13889db-e2bc-4179-90a3-07d426ceb483
+
 
 <br><br>
 <li>List Editing and Deletion: Users have the flexibility to edit or delete their lists, ensuring full control over their curated content. However, shared lists remain intact to maintain a shared experience.</li><br><br>
